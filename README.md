@@ -28,16 +28,37 @@ A squad of robotic rovers are to be landed by NASA on a plateau on Mars. This pl
 which is curiously rectangular, must be navigated by the rovers so that their on-board
 cameras can get a complete view of the surrounding terrain to send back to Earth.
 
-A rover’s position and location is represented by a combination of x and y coordinates and a letter representing one of the four cardinal compass points. The plateau is divided up into a grid to simplify navigation. An example position might be 0, 0, N, which means the rover is in the bottom left corner and facing North.
+A rover’s position and location is represented by a combination of x and y coordinates and a letter representing one of the four cardinal compass points.
+
+1. position & location --> x,y coordinate, direction letter (N,E,S,W)
+
+The plateau is divided up into a grid to simplify navigation. An example position might be 0, 0, N, which means the rover is in the bottom left corner and facing North.
+
+2. example: 0,0,N --> rover is in bottom Left corner, facing North
 
 In order to control a rover, NASA sends a simple string of letters. The possible letters are ‘L’, ‘R’ and ‘M’. ‘L’ and ‘R’ make the rover spin 90 degrees left or right respectively, without moving from its current spot. ‘M’ means move forward one grid point in whatever direction the rover is facing, and maintain the same heading.
+
+3. L | R spin 90 degrees to Left | Right, M = move
+
 Assume that the square directly North from (x, y) is (x, y+1), whereas the square directly East from (x, y) is (x+1, y).
 
 **Input:**
 - The first line of input is the upper-right coordinates of the plateau, the lower-left coordinates are assumed to be 0,0.
+
+1. Input #1 == upper right coordinates
+
 - The rest of the input is information pertaining to the rovers that have been deployed. Each rover has two lines of input. The first line gives the rover’s position, and the second line is a series of instructions telling the rover how to explore the plateau.
+
+2. Input #2 or greater == 1st line --> rover positions, 2nd line --> movement instruction for rover exploration
+
 - The position is made up of two integers and a letter separated by spaces, corresponding to the x and y coordinates and the rover’s orientation.
+
+3. Input has x,y coord and orientation ex) 2,3 N 
+
+
 - Each rover will be finished sequentially, which means that the second rover won’t start to move until the first one has finished moving.
+
+4. ONE ROVER MOVING AT A TIME!
 
 **Output:**
 - The output for each rover should be its final coordinates and heading.
